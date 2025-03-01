@@ -1,11 +1,7 @@
 import 'package:cake_and_smile/utils/constants/colors.dart';
 import 'package:cake_and_smile/utils/constants/image_strings.dart';
-import 'package:cake_and_smile/utils/constants/sizes.dart';
-import 'package:cake_and_smile/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
 import '../../../../utils/constants/text_strings.dart';
 import '../../controllers/onboarding_controller.dart';
 import 'widgets/onboardin_dot_navigation.dart';
@@ -35,18 +31,21 @@ class Onboarding extends StatelessWidget {
             children: [
               OnboardingScreen(
                 image: MImages.lightAppLogo,
-                title: 'onBoardingTitle1'.tr,
-                subtitle: "onboardingDescription1".tr,
+                title: MTexts.onBoardingTitle1.tr,
+                subtitle: MTexts.onBoardingSubTitle1.tr,
+                description: MTexts.onboardingDescription1.tr,
               ),
               OnboardingScreen(
                 image: MImages.onBoardingImage2,
-                title: 'onBoardingTitle2'.tr,
-                subtitle: "onboardingDescription2".tr,
+                title: MTexts.onBoardingTitle2.tr,
+                subtitle: MTexts.onBoardingSubTitle2.tr,
+                description: MTexts.onboardingDescription2.tr,
               ),
               OnboardingScreen(
                 image: MImages.onBoardingImage1,
-                title: 'onBoardingTitle3'.tr,
-                subtitle: "onboardingDescription3".tr,
+                title: MTexts.onBoardingTitle3.tr,
+                subtitle: MTexts.onBoardingSubTitle3.tr,
+                description: MTexts.onboardingDescription3.tr,
               ),
             ],
           ),

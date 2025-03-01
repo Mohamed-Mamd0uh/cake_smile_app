@@ -8,24 +8,31 @@ class OnboardingScreen extends StatelessWidget {
     required this.image,
     required this.title,
     required this.subtitle,
+    required this.description,
   });
-  final String image, title, subtitle;
+  final String image, title, subtitle, description;
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(10),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Image.asset(image, height: 500),
+          Image.asset(image, height: 400),
           Text(
-            title.tr,
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+            title,
+            style: Theme.of(context).textTheme.headlineLarge,
           ),
           const SizedBox(height: 20),
           Text(
-            subtitle.tr,
-            style: const TextStyle(color: Colors.grey),
+            subtitle,
+            style: Theme.of(context).textTheme.headlineSmall,
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 15),
+          Text(
+            description,
+            style: Theme.of(context).textTheme.bodySmall,
             textAlign: TextAlign.center,
           ),
         ],

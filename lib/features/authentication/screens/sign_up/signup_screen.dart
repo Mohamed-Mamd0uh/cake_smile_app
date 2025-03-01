@@ -1,6 +1,6 @@
 import 'package:cake_and_smile/shared/form_divider.dart';
 import 'package:cake_and_smile/utils/constants/image_strings.dart';
-import 'package:cake_and_smile/utils/device/device_utility.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,52 +18,55 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       // appBar: AppBar(),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(MSizes.defaultSpace),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: MSizes.defaultSpace),
-              Image.asset(MImages.lightAppLogo, height: 120),
+      body: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(MSizes.defaultSpace),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(height: MSizes.defaultSpace),
+                Image.asset(MImages.lightAppLogo, height: 120),
 
-              /// Title
-              Text(
-                'signupTitle'.tr,
-                style: Theme.of(context).textTheme.headlineMedium,
-              ),
-              const SizedBox(height: MSizes.spaceBtwSections),
-
-              /// Form
-              const SignUpForm(),
-              const SizedBox(height: MSizes.spaceBtwSections),
-
-              /// Divider
-              FormDivider(dividerText: 'orSignUpWith'.tr),
-              const SizedBox(height: MSizes.spaceBtwItems),
-
-              /// Social Buttons
-              const MSocialButtons(),
-
-              Center(
-                  child: TextButton(
-                onPressed: () => Get.to(() => const SignInScreen()),
-                child: Text.rich(
-                  TextSpan(
-                    text: 'alreadyHaveAccount'.tr,
-                    children: [
-                      TextSpan(
-                        text: ' ${'signIn'.tr}',
-                        style: const TextStyle(
-                          color: Colors.blue,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
+                /// Title
+                Text(
+                  MTexts.signupTitle.tr,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
-              ))
-            ],
+                const SizedBox(height: MSizes.spaceBtwSections),
+
+                /// Form
+                 SignUpForm(),
+                const SizedBox(height: MSizes.spaceBtwSections),
+
+                /// Divider
+                FormDivider(dividerText: MTexts.orSignUpWith.tr),
+                const SizedBox(height: MSizes.spaceBtwItems),
+
+                /// Social Buttons
+                const MSocialButtons(),
+
+                Center(
+                    child: TextButton(
+                  onPressed: () => Get.to(() => const SignInScreen()),
+                  child: Text.rich(
+                    TextSpan(
+                      text: MTexts.alreadyHaveAccount.tr,
+                      children: [
+                        TextSpan(
+                          text: ' ${MTexts.signIn.tr}',
+                          style: const TextStyle(
+                            color: Colors.blue,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ))
+              ],
+            ),
           ),
         ),
       ),

@@ -19,18 +19,19 @@ class TranslationService extends Translations {
           'onBoardingTitle1': 'Welcome to Cake & Smile',
           'onBoardingTitle2': 'Discover Delicious Cakes',
           'onBoardingTitle3': 'Deliver at your door step',
+
           'onBoardingSubTitle1':
-              'Welcome to a World of Limitless Choices - Your Perfect Product Awaits!',
+              "Your Gateway to Exceptional Taste Experiences",
           'onBoardingSubTitle2':
-              'For Seamless Transactions, Choose Your Payment Path - Your Convenience, Our Priority!',
-          'onBoardingSubTitle3':
-              'From Our Doorstep to Yours - Swift, Secure, and Contactless Delivery!',
+              "Indulge in a World of Unique Flavors & Artful Creations",
+          'onBoardingSubTitle3': "Freshness Delivered with Care, Right to You",
+
           'onboardingDescription1':
-              'Explore a world of delightful cakes and sweet moments',
+              "Begin your journey with Cake & Smile, where every bite is a blend of premium quality, freshness, and a wide variety of flavors that turn every occasion into a sweet memory.",
           'onboardingDescription2':
-              'Browse through our extensive collection of mouth-watering cakes',
+              "Explore our diverse collection of cakes crafted with passion, from classic favorites to innovative designs that satisfy every craving and celebrate every moment.",
           'onboardingDescription3':
-              'Simple, fast, and convenient cake ordering right at your fingertips',
+              "Enjoy the convenience of our fast and reliable delivery service. Wherever you are, we bring our freshly baked cakes to your door, ensuring every bite is as delightful as if you were in our store.",
 
           // Authentication Forms
           'firstName': 'First Name',
@@ -43,13 +44,14 @@ class TranslationService extends Translations {
           'rememberMe': 'Remember Me',
           'forgetPassword': 'Forget Password?',
           'signIn': 'Sign In',
+          'signUp': 'Sign Up',
           'createAccount': 'Create Account',
           'orSignInWith': 'or sign in with',
           'orSignUpWith': 'or sign up with',
           'iAgreeTo': 'I agree to',
           'privacyPolicy': 'Privacy Policy',
           'termsOfUse': 'Terms of use',
-          'verificationCode': 'verificationCode',
+          'verificationCode': 'Verification Code',
           'resendEmail': 'Resend Email',
           'resendEmailIn': 'Resend email in',
           'alreadyHaveAccount': "Already have an account?",
@@ -307,16 +309,16 @@ class TranslationService extends Translations {
           'onBoardingTitle2': 'اكتشف الكعك اللذيذ',
           'onBoardingTitle3': 'التوصيل إلى باب منزلك',
 
-          'onBoardingSubTitle1':
-              'مرحبًا بك في عالم من الخيارات الواسعة - منتجك المثالي في انتظارك!',
+          'onBoardingSubTitle1': "بوابتك لتجارب تذوق استثنائية",
           'onBoardingSubTitle2':
-              'لمعاملات سلسة، اختر طريق الدفع الخاص بك - راحتك أولويتنا!',
-          'onBoardingSubTitle3':
-              'من عتبة دارنا إلى عتبة دارك - توصيل سريع وآمن وبدون تلامس!',
+              "انغمس في عالم من النكهات الفريدة والتصميمات الفنية المبتكرة",
+          'onBoardingSubTitle3': "نضارة تصل إليك بعناية، حيثما تكون",
           'onboardingDescription1':
-              'استكشف عالمًا من اللحظات الرائعة والحلويات',
-          'onboardingDescription2': 'تصفح مجموعتنا الواسعة من الكعك شهي المذاق',
-          'onboardingDescription3': 'طلب سهل وسريع ومريح مباشرة من هاتفك',
+              "ابدأ رحلتك مع Cake & Smile، حيث كل قضمة مزيج من الجودة الفائقة والنضارة وتنوع النكهات التي تحوّل كل مناسبة إلى ذكرى حلوة.",
+          'onboardingDescription2':
+              "اكتشف تشكيلتنا المتنوعة من الكعك المصنوع بشغف، بدءًا من النكهات الكلاسيكية المحبوبة إلى التصاميم المبتكرة التي تلبي كل الرغبات وتخلد كل لحظة.",
+          'onboardingDescription3':
+              "استمتع براحة خدمة التوصيل السريعة والموثوقة. أينما كنت، نقدم كعكنا الطازج إلى باب منزلك، مع ضمان أن كل قضمة لذيذة كما لو كنت في متجرنا.",
 
           // Authentication Forms
           'firstName': 'الاسم الأول',
@@ -329,6 +331,8 @@ class TranslationService extends Translations {
           'rememberMe': 'تذكرني',
           'forgetPassword': 'نسيت كلمة المرور؟',
           'signIn': 'تسجيل الدخول',
+
+          'signUp': 'تسجيل حساب',
           'createAccount': 'إنشاء حساب',
           'orSignInWith': 'أو تسجيل الدخول باستخدام',
           'orSignUpWith': 'أو التسجيل باستخدام',
@@ -339,6 +343,9 @@ class TranslationService extends Translations {
           'resendEmail': 'إعادة إرسال البريد الإلكتروني',
           'resendEmailIn': 'إعادة إرسال البريد الإلكتروني في',
           'alreadyHaveAccount': "هل لديك حساب بالفعل؟",
+
+
+
           // Authentication Headings
           'loginTitle': 'مرحبًا بعودتك،',
           'loginSubTitle': 'اكتشف خيارات لا حدود لها وراحة غير مسبوقة.',

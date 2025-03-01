@@ -1,33 +1,54 @@
+import 'package:cake_and_smile/features/authentication/controllers/signin_controller.dart';
 import 'package:cake_and_smile/utils/constants/sizes.dart';
+import 'package:cake_and_smile/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../sign_up/signup_screen.dart';
 
 class SignInForm extends StatelessWidget {
-  const SignInForm({super.key});
-
+  SignInForm({super.key});
+  final _passwordFocusNode = FocusNode();
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(SigninController());
+
     return Form(
+      key: controller.formKey,
       child: Column(
         children: [
           /// Email
           TextFormField(
+            controller: controller.email,
+            onFieldSubmitted: (_) => _passwordFocusNode.requestFocus(),
             decoration: InputDecoration(
               prefixIcon: const Icon(Icons.email_outlined),
-              labelText: 'email'.tr,
+              labelText: MTexts.email.tr,
             ),
           ),
           const SizedBox(height: MSizes.spaceBtwInputFields),
 
           /// Password
-          TextFormField(
-            obscureText: true,
-            decoration: InputDecoration(
-              prefixIcon: const Icon(Icons.lock_outline),
-              labelText: 'password'.tr,
-              suffixIcon: const Icon(Icons.remove_red_eye_rounded),
+          Obx(
+            () => TextFormField(
+              obscureText: controller.hidePassword.value,
+              focusNode: _passwordFocusNode,
+              onFieldSubmitted: (_) => FocusScope.of(context).unfocus(),
+              controller: controller.password,
+              decoration: InputDecoration(
+                labelText: MTexts.password.tr,
+                prefixIcon: const Icon(Icons.lock_outline),
+                suffixIcon: IconButton(
+                  icon: Icon(
+                    controller.hidePassword.value
+                        ? Icons.visibility_off_outlined
+                        : Icons.visibility_outlined,
+                  ),
+                  onPressed: () {
+                    controller.togglePasswordVisibility();
+                  },
+                ),
+              ),
             ),
           ),
           const SizedBox(height: MSizes.spaceBtwInputFields),
@@ -40,14 +61,14 @@ class SignInForm extends StatelessWidget {
               Row(
                 children: [
                   Checkbox(value: true, onChanged: (value) {}),
-                  Text('rememberMe'.tr),
+                  Text(MTexts.rememberMe.tr),
                 ],
               ),
 
               /// Forget Password
               TextButton(
                 onPressed: () {},
-                child: Text('forgetPassword'.tr),
+                child: Text(MTexts.forgetPassword.tr),
               ),
             ],
           ),
@@ -58,7 +79,7 @@ class SignInForm extends StatelessWidget {
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {},
-              child: Text('signIn'.tr),
+              child: Text(MTexts.signIn.tr),
             ),
           ),
           const SizedBox(height: MSizes.spaceBtwItems),
@@ -71,7 +92,7 @@ class SignInForm extends StatelessWidget {
                 context,
                 MaterialPageRoute(builder: (context) => const SignUpScreen()),
               ),
-              child: Text('createAccount'.tr),
+              child: Text(MTexts.createAccount.tr),
             ),
           ),
         ],

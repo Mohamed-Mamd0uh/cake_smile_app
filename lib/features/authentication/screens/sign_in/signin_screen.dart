@@ -7,7 +7,7 @@ import 'package:cake_and_smile/utils/constants/text_strings.dart';
 import 'package:get/get.dart';
 
 import '../../../../shared/widgets/signin_signup/social_buttons.dart';
-import '../sign_up/signup_screen.dart';
+
 import 'widget/signin_form.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -30,17 +30,17 @@ class SignInScreen extends StatelessWidget {
 
               /// Title
               Text(
-                'loginTitle'.tr,
+                MTexts.loginTitle.tr,
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
               const SizedBox(height: MSizes.spaceBtwSections),
 
               /// Form
-              const SignInForm(),
+              SignInForm(),
               const SizedBox(height: MSizes.spaceBtwSections),
 
               /// Divider
-              FormDivider(dividerText: 'orSignInWith'.tr),
+              FormDivider(dividerText: MTexts.orSignInWith.tr),
               const SizedBox(height: MSizes.spaceBtwSections),
 
               /// Social Buttons

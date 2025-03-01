@@ -18,7 +18,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark = MHelperFunctions.isDarkMode(context);
+
     final productController = Get.put(ProductsController());
 
     return Scaffold(

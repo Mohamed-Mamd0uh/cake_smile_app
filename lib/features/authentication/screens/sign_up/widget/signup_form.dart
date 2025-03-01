@@ -3,12 +3,23 @@ import 'package:cake_and_smile/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../controllers/signup_controller.dart';
+import 'terms_checkbox.dart';
+
 class SignUpForm extends StatelessWidget {
-  const SignUpForm({super.key});
+  SignUpForm({super.key});
+
+  final FocusNode _lastNameFocusNode = FocusNode();
+  final FocusNode _usernameFocusNode = FocusNode();
+  final FocusNode _emailFocusNode = FocusNode();
+  final FocusNode _phoneFocusNode = FocusNode();
+  final FocusNode _passwordFocusNode = FocusNode();
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(SignupController());
     return Form(
+      key: controller.formKey,
       child: Column(
         children: [
           /// First & Last Name
@@ -16,8 +27,10 @@ class SignUpForm extends StatelessWidget {
             children: [
               Expanded(
                 child: TextFormField(
+                  onFieldSubmitted: (_) => _lastNameFocusNode.requestFocus(),
+                  controller: controller.firstName,
                   decoration: InputDecoration(
-                    labelText: 'firstName'.tr,
+                    labelText: MTexts.firstName.tr,
                     prefixIcon: const Icon(Icons.person_outline),
                   ),
                 ),
@@ -25,9 +38,11 @@ class SignUpForm extends StatelessWidget {
               const SizedBox(width: MSizes.spaceBtwInputFields),
               Expanded(
                 child: TextFormField(
+                  focusNode: _lastNameFocusNode,
+                  onFieldSubmitted: (_) => _usernameFocusNode.requestFocus(),
+                  controller: controller.lastName,
                   decoration: InputDecoration(
-                    labelText: 'lastName'.tr,
-                    prefixIcon: const Icon(Icons.person_outline),
+                    labelText: MTexts.lastName.tr,
                   ),
                 ),
               ),
@@ -37,8 +52,11 @@ class SignUpForm extends StatelessWidget {
 
           /// Username
           TextFormField(
+            focusNode: _usernameFocusNode,
+            onFieldSubmitted: (_) => _emailFocusNode.requestFocus(),
+            controller: controller.username,
             decoration: InputDecoration(
-              labelText: 'username'.tr,
+              labelText: MTexts.username.tr,
               prefixIcon: const Icon(Icons.person_2_outlined),
             ),
           ),
@@ -46,8 +64,11 @@ class SignUpForm extends StatelessWidget {
 
           /// Email
           TextFormField(
+            focusNode: _emailFocusNode,
+            onFieldSubmitted: (_) => _phoneFocusNode.requestFocus(),
+            controller: controller.email,
             decoration: InputDecoration(
-              labelText: 'email'.tr,
+              labelText: MTexts.email.tr,
               prefixIcon: const Icon(Icons.email_outlined),
             ),
           ),
@@ -55,50 +76,43 @@ class SignUpForm extends StatelessWidget {
 
           /// Phone Number
           TextFormField(
+            focusNode: _phoneFocusNode,
+            onFieldSubmitted: (_) => _passwordFocusNode.requestFocus(),
+            controller: controller.phone,
             decoration: InputDecoration(
-              labelText: 'phoneNo'.tr,
+              labelText: MTexts.phoneNo.tr,
               prefixIcon: const Icon(Icons.phone_outlined),
             ),
           ),
           const SizedBox(height: MSizes.spaceBtwInputFields),
 
           /// Password
-          TextFormField(
-            obscureText: true,
-            decoration: InputDecoration(
-              labelText: 'password'.tr,
-              prefixIcon: const Icon(Icons.lock_outline),
-              suffixIcon: const Icon(Icons.remove_red_eye_rounded),
+          Obx(
+            () => TextFormField(
+              obscureText: controller.hidePassword.value,
+              focusNode: _passwordFocusNode,
+              onFieldSubmitted: (_) => FocusScope.of(context).unfocus(),
+              controller: controller.password,
+              decoration: InputDecoration(
+                labelText: MTexts.password.tr,
+                prefixIcon: const Icon(Icons.lock_outline),
+                suffixIcon: IconButton(
+                  icon: Icon(
+                    controller.hidePassword.value
+                        ? Icons.visibility_off_outlined
+                        : Icons.visibility_outlined,
+                  ),
+                  onPressed: () {
+                    controller.togglePasswordVisibility();
+                  },
+                ),
+              ),
             ),
           ),
           const SizedBox(height: MSizes.spaceBtwInputFields),
 
           /// Terms & Conditions Checkbox
-          Row(
-            children: [
-              Checkbox(value: true, onChanged: (value) {}),
-              Text.rich(
-                TextSpan(
-                  children: [
-                    TextSpan(text: 'iAgreeTo'.tr),
-                    TextSpan(
-                      text: 'privacyPolicy'.tr,
-                      style: const TextStyle(
-                          color: Colors.blue, fontWeight: FontWeight.bold),
-                    ),
-                    TextSpan(
-                      text: ' ${'and'.tr} ',
-                    ),
-                    TextSpan(
-                      text: 'termsOfUse'.tr,
-                      style: const TextStyle(
-                          color: Colors.blue, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
+          const MTermsCheckbox(),
           const SizedBox(height: MSizes.spaceBtwItems),
 
           /// Sign Up Button
@@ -106,7 +120,7 @@ class SignUpForm extends StatelessWidget {
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {},
-              child: Text('createAccount'.tr),
+              child: Text(MTexts.createAccount.tr),
             ),
           ),
         ],
