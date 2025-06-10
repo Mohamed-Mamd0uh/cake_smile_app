@@ -39,6 +39,12 @@ class MHelperFunctions {
     }
   }
 
+  String detectLanguage(String word) {
+    final arabicRegex = RegExp(
+        r'[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]');
+    return arabicRegex.hasMatch(word) ? 'ar' : 'en';
+  }
+
   double convertTokilo(String weight) {
     // فصل الرقم عن الوحدة باستخدام Regular Expression
     final match = RegExp(r'^([0-9.]+)\s*([a-zA-Z]+)$').firstMatch(weight);

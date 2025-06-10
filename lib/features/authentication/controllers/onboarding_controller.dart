@@ -1,4 +1,3 @@
-import 'package:cake_and_smile/navigation_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -25,7 +24,6 @@ class OnboardingController extends GetxController {
       // Get.to(() => const NavigationMenu());
     } else {
       int page = currentPage.value + 1;
-      print("page value: $currentPage \n page: $page");
       pageController.jumpToPage(page);
       if (page == 2) {
         isLastPage.value = true;

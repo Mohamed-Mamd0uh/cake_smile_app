@@ -1,19 +1,19 @@
+import 'package:cake_and_smile/features/personalization/screens/settings/settings.dart';
+import 'package:cake_and_smile/features/shop/screens/cart/cart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'utils/constants/colors.dart';
-import 'utils/helpers/helper_functions.dart';
-import 'features/bakery/screens/home/home.dart';
-import 'features/bakery/screens/cart/cart.dart';
-import 'features/bakery/screens/favorite/favourite.dart';
-import 'features/bakery/screens/profile/profile.dart';
+
+import 'features/shop/screens/home/home.dart';
+
+import 'features/shop/screens/favorite/favourite.dart';
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(NavigationController());
-    final dark = MHelperFunctions.isDarkMode(context);
     return Scaffold(
         bottomNavigationBar: Obx(
           () => NavigationBar(
@@ -24,19 +24,17 @@ class NavigationMenu extends StatelessWidget {
               controller.selectIndex.value = value;
               controller.pageController.jumpToPage(value);
             },
-            backgroundColor: dark ? MColors.black : MColors.white,
-            indicatorColor: dark
-                ? MColors.white.withOpacity(0.1)
-                : MColors.black.withOpacity(0.1),
-            destinations: const [
+            backgroundColor: MColors.white,
+            indicatorColor: MColors.black.withOpacity(0.1),
+            destinations: [
               NavigationDestination(
-                  icon: Icon(Iconsax.home), label: 'الرئيسية'),
+                  icon: Icon(Iconsax.home), label: 'navHome'.tr),
               NavigationDestination(
-                  icon: Icon(Iconsax.shopping_cart), label: 'السلة'),
+                  icon: Icon(Iconsax.shopping_cart), label: 'navCart'.tr),
               NavigationDestination(
-                  icon: Icon(Iconsax.heart), label: 'المفضلة'),
+                  icon: Icon(Iconsax.heart), label: 'navFavorites'.tr),
               NavigationDestination(
-                  icon: Icon(Iconsax.profile_circle), label: 'حسابي'),
+                  icon: Icon(Iconsax.profile_circle), label: 'navAccount'.tr),
             ],
           ),
         ),
@@ -48,7 +46,7 @@ class NavigationMenu extends StatelessWidget {
               Home(),
               Cart(),
               FavouriteScreen(),
-              Profile(),
+              SettingsScreen(),
             ],
           ),
         ));
@@ -62,6 +60,6 @@ class NavigationController extends GetxController {
     const Home(),
     const Cart(),
     const FavouriteScreen(),
-    const Profile(),
+    const SettingsScreen(),
   ];
 }

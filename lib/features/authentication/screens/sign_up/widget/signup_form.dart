@@ -2,7 +2,6 @@ import 'package:cake_and_smile/utils/constants/sizes.dart';
 import 'package:cake_and_smile/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../controllers/signup_controller.dart';
 import 'terms_checkbox.dart';
 
@@ -19,7 +18,7 @@ class SignUpForm extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(SignupController());
     return Form(
-      key: controller.formKey,
+      key: controller.keySignup,
       child: Column(
         children: [
           /// First & Last Name
@@ -54,7 +53,8 @@ class SignUpForm extends StatelessWidget {
           TextFormField(
             focusNode: _usernameFocusNode,
             onFieldSubmitted: (_) => _emailFocusNode.requestFocus(),
-            controller: controller.username,
+            controller: controller.userName,
+            //userName
             decoration: InputDecoration(
               labelText: MTexts.username.tr,
               prefixIcon: const Icon(Icons.person_2_outlined),
@@ -78,7 +78,7 @@ class SignUpForm extends StatelessWidget {
           TextFormField(
             focusNode: _phoneFocusNode,
             onFieldSubmitted: (_) => _passwordFocusNode.requestFocus(),
-            controller: controller.phone,
+            controller: controller.phoneNumber,
             decoration: InputDecoration(
               labelText: MTexts.phoneNo.tr,
               prefixIcon: const Icon(Icons.phone_outlined),
@@ -119,7 +119,9 @@ class SignUpForm extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () async {
+                controller.signup();
+              },
               child: Text(MTexts.createAccount.tr),
             ),
           ),

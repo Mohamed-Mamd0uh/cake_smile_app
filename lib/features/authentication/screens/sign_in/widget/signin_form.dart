@@ -14,7 +14,7 @@ class SignInForm extends StatelessWidget {
     final controller = Get.put(SigninController());
 
     return Form(
-      key: controller.formKey,
+      key: controller.signinKey,
       child: Column(
         children: [
           /// Email
@@ -58,11 +58,18 @@ class SignInForm extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               /// Remember Me
-              Row(
-                children: [
-                  Checkbox(value: true, onChanged: (value) {}),
-                  Text(MTexts.rememberMe.tr),
-                ],
+              Obx(
+                () => Row(
+                  children: [
+                    Checkbox(
+                        value: controller.rememberMe.value,
+                        onChanged: (value) {
+                          controller.rememberMe.value =
+                              !controller.rememberMe.value;
+                        }),
+                    Text(MTexts.rememberMe.tr),
+                  ],
+                ),
               ),
 
               /// Forget Password
@@ -78,7 +85,9 @@ class SignInForm extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                controller.signin();
+              },
               child: Text(MTexts.signIn.tr),
             ),
           ),

@@ -1,4 +1,6 @@
+import 'package:cake_and_smile/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CoustomHeader extends StatelessWidget {
   const CoustomHeader(
@@ -18,7 +20,7 @@ class CoustomHeader extends StatelessWidget {
         if (button)
           TextButton(
             onPressed: onTap,
-            child: const Text('عرض الكل'),
+            child: Text(MTexts.showAll.tr),
           ),
       ],
     );

@@ -1,6 +1,4 @@
-import 'package:cake_and_smile/features/authentication/controllers/onboarding_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({

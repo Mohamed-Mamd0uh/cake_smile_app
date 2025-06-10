@@ -11,6 +11,43 @@ class MTexts {
   static const String appName = "Cake & Smile";
   static const String tContinue = "Continue";
   static const String welcome = "Welcome";
+  static const String showAll = "showAll";
+  static const String stock = "stock";
+  static const String price = "price";
+  static const String description = "description";
+  static const String reviews = "reviews";
+  static const String weight = "weight";
+  static const String size = "size";
+  static const String checkout = "checkout";
+  static const String small = "small";
+  static const String medium = "medium";
+  static const String large = "large";
+  //============= Settings ===============
+  static const String account = "account";
+  static const String settings = "settings";
+  static const String settingsAccount = "settingsAccount";
+  static const String logout = "logout";
+  static const String profile = "profile";
+  static const String orders = "orders";
+  static const String address = "address";
+  static const String payment = "payment";
+  static const String notifications = "notifications";
+  static const String privacy = "privacy";
+  static const String terms = "terms";
+  static const String help = "help";
+  static const String about = "about";
+  static const String contact = "contact";
+  static const String faq = "faq";
+  static const String security = "security";
+  static const String myCart = "myCart";
+  static const String myOrders = "myOrders";
+  static const String myAddresses = "myAddresses";
+  static const String myPayments = "myPayments";
+  static const String bankAccount = "bankAccount";
+  static const String myCoupons = "myCoupons";
+  static const String accountPrivacy = "accountPrivacy";
+  static const String appSetting = "appSetting";
+
 
   // ========== OnBoarding Texts ==========
   static const String onBoardingTitle1 = "Welcome to Cake & Smile";
@@ -57,191 +94,22 @@ class MTexts {
   static const String changeYourPasswordTitle = "changeYourPasswordTitle";
   static const String changeYourPasswordSubTitle = "changeYourPasswordSubTitle";
   static const String confirmEmail = "confirmEmail";
-  static const String confirmEmailSubTitle =
-      "Congratulations! Your Account Awaits: Verify Your Email to Start Shopping and Experience a World of Unrivaled Deals and Personalized Offers.";
+  static const String confirmEmailSubTitle = "confirmEmailSubTitle";
   static const String emailNotReceivedMessage =
       "Didn’t get the email? Check your junk/spam or resend it.";
-  static const String yourAccountCreatedTitle =
-      "Your account successfully created!";
-  static const String yourAccountCreatedSubTitle =
-      "Welcome to Your Ultimate Shopping Destination: Your Account is Created, Unleash the Joy of Seamless Online Shopping!";
+  static const String yourAccountCreatedTitle = "yourAccountCreatedTitle";
+  static const String yourAccountCreatedSubTitle = "yourAccountCreatedSubTitle";
 
   // ========== Product ==========
-  static const String popularProducts = "Popular Products";
-  static const String specialProducts = "Special Products";
-  static const String categories = "Categories";
+  static const String popularProducts = "popularProducts";
+  static const String specialProducts = "specialProducts";
+  static const String categories = "categories";
+  static const String allCategories = "allCategories";
 
   // ========== Home ==========
   static const String homeAppbarTitle = "Good day for shopping";
   static const String homeAppbarSubTitle = "Taimoor Sikander";
-  static const String homeSearchHint = "Search for your favorite product";
-
-  // ========== Product Names ==========
-  static const String product1Name = "Classic Vanilla Cake";
-  static const String product2Name = "Classic Chocolate Cake";
-  static const String product3Name = "Carrot Cake";
-  static const String product4Name = "Lemon Cake";
-  static const String product5Name = "Salted Caramel Cake";
-  static const String product6Name = "Cheesecake with Berries";
-  static const String product7Name = "Coffee Cake";
-  static const String product8Name = "Chocolate Mint Cake";
-  static const String product9Name = "Fresh Fruit Cake";
-  static const String product10Name = "Black Forest Cake";
-  static const String product11Name = "Kunafa with Cream";
-  static const String product12Name = "Pistachio Baklava";
-  static const String product13Name = "Nut Katayef";
-  static const String product14Name = "Coconut Basbousa";
-  static const String product15Name = "Um Ali";
-  static const String product16Name = "Pistachio Muhalabia";
-  static const String product17Name = "Zalabia";
-  static const String product18Name = "Ghraybeh";
-  static const String product19Name = "Nabulsi Kunafa";
-  static const String product20Name = "Date Maamoul";
-  static const String product21Name = "Italian Tiramisu";
-  static const String product22Name = "Chocolate Cupcakes";
-  static const String product23Name = "Apple Pie";
-  static const String product24Name = "Chocolate Loaf Cake";
-  static const String product25Name = "Banana Cake with Walnuts";
-  static const String product26Name = "Vanilla Caramel Cake";
-  static const String product27Name = "Chocolate Donuts";
-  static const String product28Name = "Vanilla Donuts";
-  static const String product29Name = "Salted Caramel Donuts";
-  static const String product30Name = "Strawberry Donuts";
-  static const String product31Name = "Banana Donuts";
-  static const String product32Name = "Coffee Donuts";
-  static const String product33Name = "Pistachio Donuts";
-  static const String product34Name = "Lotus Donuts";
-  static const String product35Name = "White Chocolate Donuts";
-  static const String product36Name = "Chocolate Cookies";
-  static const String product37Name = "Butter Cookies";
-  static const String product38Name = "Vanilla Cookies";
-  static const String product39Name = "Mint Chocolate Cookies";
-  static const String product40Name = "Walnut Cookies";
-  static const String product41Name = "Salted Caramel Cookies";
-  static const String product42Name = "White Chocolate Raspberry Cookies";
-  static const String product43Name = "Almond Cookies";
-  static const String product44Name = "Coconut Cookies";
-  static const String product45Name = "Coffee Cookies";
-  static const String product46Name = "Sugar-Free Chocolate Cake";
-  static const String product47Name = "Oatmeal Honey Cookies";
-  static const String product48Name = "Vegan Blueberry Cheesecake";
-  static const String product49Name = "Blueberry Parfait";
-  static const String product50Name = "Date Nut Balls";
-  static const String product51Name = "Gluten-Free Carrot Cake";
-  static const String product52Name = "Flourless Chocolate Cookies";
-  static const String product53Name = "Chia Pudding";
-  static const String product54Name = "Oatmeal Banana Cake";
-  static const String product55Name = "Chocolate Protein Balls";
-
-  // ========== Product Descriptions ==========
-  static const String product1Description =
-      "Soft and smooth vanilla cake with delicious light buttercream.";
-  static const String product2Description =
-      "Rich and soft chocolate cake with hot chocolate sauce.";
-  static const String product3Description =
-      "Delicious carrot cake with coconut and cream cheese.";
-  static const String product4Description =
-      "Refreshing lemon cake with a lemon sugar glaze.";
-  static const String product5Description =
-      "Caramel cake with a layer of salted caramel.";
-  static const String product6Description =
-      "Creamy cheesecake with a layer of fresh berries.";
-  static const String product7Description =
-      "Coffee cake with a layer of mocha.";
-  static const String product8Description =
-      "Chocolate cake with a refreshing mint flavor.";
-  static const String product9Description =
-      "Fresh fruit cake with light cream.";
-  static const String product10Description =
-      "Chocolate cake with a layer of black cherries.";
-  static const String product11Description =
-      "Crispy kunafa stuffed with fresh cream.";
-  static const String product12Description =
-      "Baklava stuffed with pistachios and covered with syrup.";
-  static const String product13Description =
-      "Katayef stuffed with nuts and fried.";
-  static const String product14Description =
-      "Soft basbousa with coconut and delicious syrup.";
-  static const String product15Description =
-      "Um Ali with cream, nuts, and raisins.";
-  static const String product16Description =
-      "Creamy muhalabia with a layer of pistachios.";
-  static const String product17Description =
-      "Crispy on the outside and soft on the inside, served with syrup or honey.";
-  static const String product18Description =
-      "Soft and crunchy ghraybeh made from semolina.";
-  static const String product19Description =
-      "Crispy Nabulsi kunafa with cheese.";
-  static const String product20Description =
-      "Maamoul stuffed with dates and covered with powdered sugar.";
-  static const String product21Description =
-      "Classic tiramisu with coffee and cocoa.";
-  static const String product22Description =
-      "Chocolate cupcakes with buttercream.";
-  static const String product23Description =
-      "Apple pie with cinnamon and brown sugar.";
-  static const String product24Description = "Soft chocolate loaf cake.";
-  static const String product25Description = "Banana cake with walnut pieces.";
-  static const String product26Description =
-      "Vanilla cake with a layer of caramel.";
-  static const String product27Description =
-      "Donuts covered with rich chocolate sauce.";
-  static const String product28Description =
-      "Donuts covered with vanilla sauce and sprinkles.";
-  static const String product29Description =
-      "Donuts covered with salted caramel sauce.";
-  static const String product30Description =
-      "Donuts covered with strawberry sauce and cream.";
-  static const String product31Description =
-      "Banana-flavored donuts with chocolate.";
-  static const String product32Description =
-      "Coffee-flavored donuts with mocha.";
-  static const String product33Description =
-      "Donuts covered with pistachios and chocolate.";
-  static const String product34Description =
-      "Donuts covered with lotus sauce and caramel.";
-  static const String product35Description =
-      "Donuts covered with white chocolate sauce.";
-  static const String product36Description =
-      "Soft chocolate cookies with chocolate chips.";
-  static const String product37Description =
-      "Classic butter cookies with sugar.";
-  static const String product38Description =
-      "Vanilla cookies with colored sugar.";
-  static const String product39Description =
-      "Chocolate cookies with a mint flavor.";
-  static const String product40Description = "Walnut cookies with cinnamon.";
-  static const String product41Description = "Caramel cookies with sea salt.";
-  static const String product42Description =
-      "White chocolate cookies with raspberries.";
-  static const String product43Description = "Almond cookies with chocolate.";
-  static const String product44Description = "Coconut cookies with chocolate.";
-  static const String product45Description = "Coffee cookies with chocolate.";
-  static const String product46Description =
-      "Sugar-free chocolate cake with stevia.";
-  static const String product47Description =
-      "Oatmeal cookies with natural honey.";
-  static const String product48Description =
-      "Vegan cheesecake with fresh blueberries.";
-  static const String product49Description =
-      "Blueberry parfait with Greek yogurt.";
-  static const String product50Description =
-      "Date balls with nuts and coconut.";
-  static const String product51Description = "Gluten-free carrot cake.";
-  static const String product52Description = "Flourless chocolate cookies.";
-  static const String product53Description = "Chia pudding with fresh fruits.";
-  static const String product54Description =
-      "Oatmeal cake with banana and honey.";
-  static const String product55Description =
-      "Protein balls with dark chocolate.";
-
-  // ========== Product Categories ==========
-  static const String breadCategory = "Bread";
-  static const String cakeCategory = "Cake";
-  static const String cookiesCategory = "Cookies";
-  static const String donutCategory = "Donut";
-  static const String pastryCategory = "Pastry";
-  static const String dessertCategory = "Dessert";
+  static const String homeSearchHint = "homeSearchHint";
 
   // ========== PRODUCT TAGS ==========
   // -- General Tags

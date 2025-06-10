@@ -62,14 +62,16 @@ class Mloaders {
   }
 
   static errorSnackBar(
-      {required title, message = '', SnackPosition? snackPosition = SnackPosition.BOTTOM}) {
+      {required title,
+      message = '',
+      SnackPosition? snackPosition = SnackPosition.BOTTOM}) {
     Get.snackbar(
       title,
       message,
       isDismissible: true,
       shouldIconPulse: true,
       colorText: MColors.white,
-      backgroundColor: Colors.red.shade600,
+      backgroundColor: MColors.error.withOpacity(0.7),
       snackPosition: snackPosition,
       duration: const Duration(seconds: 3),
       margin: const EdgeInsets.all(20),

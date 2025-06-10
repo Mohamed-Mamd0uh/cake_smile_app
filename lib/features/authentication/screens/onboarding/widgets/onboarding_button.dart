@@ -27,7 +27,7 @@ class OnboardingButton extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.only(left: 10, right: 10),
           child: Obx(
-            () => Text(controller.isLastPage.value ? "Get Started" : "Next"),
+            () => Text(controller.isLastPage.value ? "getStarted".tr : "next".tr),
           ),
         ),
       ),

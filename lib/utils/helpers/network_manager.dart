@@ -10,7 +10,7 @@ class NetworkManager extends GetxController {
   static NetworkManager get instance => Get.find();
 
   final Connectivity _connectivity = Connectivity();
-  late StreamSubscription<ConnectivityResult> _connectivitySubscription;
+  late StreamSubscription<List<ConnectivityResult>> _connectivitySubscription;
   final Rx<ConnectivityResult> _connectionStatus = ConnectivityResult.none.obs;
 
   /// Initialize the network manager and set up a stream to continually check the connection status.
@@ -18,7 +18,10 @@ class NetworkManager extends GetxController {
   void onInit() {
     super.onInit();
     _connectivitySubscription =
-        _connectivity.onConnectivityChanged.listen(_updateConnectionStatus);
+        _connectivity.onConnectivityChanged.listen((results) {
+          // استخدم أول نتيجة في القائمة
+          _updateConnectionStatus(results.first);
+        });
   }
 
   /// Update the connection status based on changes in connectivity and show a relevant popup for no internet connection.
